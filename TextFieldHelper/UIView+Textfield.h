@@ -50,6 +50,7 @@
 - (void) textfieldTouchToReturn;
 
 - (BOOL) validateInput;
+- (BOOL) validateOption:(NSString*)op string:(NSString*)string other:(int)i;
 
 /* Usage:
  - (BOOL)textFieldShouldReturn:(UITextField *)textField 
