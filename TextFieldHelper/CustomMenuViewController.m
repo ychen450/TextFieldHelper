@@ -2,9 +2,10 @@
 //  CustomMenuViewController.m
 //  TextFieldHelper
 //
-//  Created by Chen, Yang-Lin on 6/5/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Chen, Yan-Ling on 5/31/12.
+//  Copyright (c) 2012 Chen, Yan-Ling. 
 //
+//  Released under the MIT License.
 
 #import "CustomMenuViewController.h"
 

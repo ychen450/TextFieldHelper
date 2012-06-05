@@ -3,8 +3,9 @@
 //  TextFieldHelper
 //
 //  Created by Chen, Yan-Ling on 5/31/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Chen, Yan-Ling. 
 //
+//  Released under the MIT License.
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
