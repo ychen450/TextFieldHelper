@@ -11,8 +11,9 @@ Features:
 * Validation including mininum length, maximun length, email, number only, and re-enter password check.
 
 How to use:
-1. Put UIView+Textfield class (.h and .m) into your project. Remember to #import "UIVew+Textfield.h" and <UITextFieldDelegate> when using.
-2. Set up in ViewDidLoad: (for example, your textfield is _userNameField and _passwordField)
+* Put UIView+Textfield class (.h and .m) into your project. Remember to #import "UIVew+Textfield.h" and <UITextFieldDelegate> when using.
+* Set up in ViewDidLoad: (for example, your textfield is _userNameField and _passwordField)
+      
       _userNameField.delegate = self;
       _passwordField.delegate = self;
 
