@@ -42,6 +42,8 @@
     [textfieldArray addObject:numberDict];
     
     [self.view setTextField:[NSArray arrayWithArray: textfieldArray]];
+    
+    // TODO...
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField  {    
@@ -77,22 +79,10 @@
 
 - (IBAction)SetDetailBtn:(id)sender {
     
-    CGRect labelFrame = CGRectMake( 10, 250, 100, 30 );
+    CGRect labelFrame = CGRectMake( 30, 250, 100, 30 );
     UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
-    [label setText: @"My Label"];
+    [label setText: @"NOT IMPLEMENTED YET"];
     [label setTextColor: [UIColor orangeColor]];
     [CustMenu_scroll addSubview:label];
-    
-    CGRect labelFrame1 = CGRectMake( 10, 300, 100, 30 );
-    UILabel* label1 = [[UILabel alloc] initWithFrame: labelFrame1];
-    [label1 setText: @"My Label"];
-    [label1 setTextColor: [UIColor orangeColor]];
-    [CustMenu_scroll addSubview:label1];
-    
-    CGRect labelFrame2 = CGRectMake( 10, 450, 100, 30 );
-    UILabel* label2 = [[UILabel alloc] initWithFrame: labelFrame2];
-    [label2 setText: @"My Label"];
-    [label2 setTextColor: [UIColor orangeColor]];
-    [CustMenu_scroll addSubview:label2];
 }
 @end

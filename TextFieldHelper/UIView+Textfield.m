@@ -21,6 +21,8 @@ int endEditNum;
 
 @implementation UIView (Textfield)
 
+// save the UITextField objects into the local array "textFieldArray"
+// assign the return key type, the last one is "Go, the others are "Next"
 - (void) setTextField:(NSArray*)tfarray {
     textFieldArray = [NSArray arrayWithArray:tfarray];
     
@@ -37,6 +39,7 @@ int endEditNum;
     endEditNum = 0;
 }
 
+// implement animation to make sure the text field user editing is visible and clear 
 - (void) textfieldMakeVisible:(UITextField*)textField {
     CGRect textFieldRect = [self.window convertRect:textField.bounds fromView:textField];
     CGRect viewRect = [self.window convertRect:self.bounds fromView:self];
@@ -67,6 +70,9 @@ int endEditNum;
     [UIView commitAnimations];
 }
 
+// called when the user end editing the text field
+// do animation back to the previous state
+// do validation if needed
 - (void) textfieldEndEdit:(UITextField*)textField;{
     
     CGRect viewFrame = self.frame;
@@ -84,6 +90,8 @@ int endEditNum;
     }
 }
 
+// called when the return key of text field clicked
+// leave the text field end edit, automaically go editing the next one
 - (void) textfieldReturn:(UITextField*)textField {
     
     if (textField.tag == [textFieldArray count]-1) {
@@ -94,6 +102,7 @@ int endEditNum;
     }
 }
 
+// dismiss the keyboard and end edit when the user touch outside the keyboard and text field
 - (void) textfieldTouchToReturn {
     
     NSArray *subviews = [self subviews];
@@ -107,6 +116,9 @@ int endEditNum;
     }
 }
 
+// do text field input validation
+// check minimun and maximun length or specialized option
+// if validation fails, show error message on label and give the text field a red border 
 - (BOOL) validateInput
 {
     int fail = 0;
@@ -114,8 +126,8 @@ int endEditNum;
         UITextField *tf;
         tf = [[textFieldArray objectAtIndex:i] objectForKey:@"textfield"];
         
-        int minLength = 0;
-        int maxLength = 100;
+        int minLength = 0;      // default value for minimum length is 0 if none is set
+        int maxLength = 100;    // default value for maxinum length is 100 if none is set
         NSString *option;
         if ([[textFieldArray objectAtIndex:i] objectForKey:@"minlength"]) {
             minLength = [[[textFieldArray objectAtIndex:i] objectForKey:@"minlength"] intValue];
@@ -165,6 +177,7 @@ int endEditNum;
     }
 }
 
+// do specialized validation: Email format check, number input only, and checking re enter password the same or not 
 - (BOOL) validateOption:(NSString*)op string:(NSString*)string other:(int)i{
     
     if ([op isEqualToString:@"EMAIL"]) {

@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6qD-K0-qJY">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6qD-K0-qJY">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -20,7 +18,6 @@
             </objects>
             <point key="canvasLocation" x="1367" y="390"/>
         </scene>
-        <!--View Controller - Advanced-->
         <scene sceneID="xdu-Sg-THJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfY-2z-ZUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,7 +26,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To be updated... something " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sdA-2i-Y6L">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To be updated..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sdA-2i-Y6L">
                                 <rect key="frame" x="48" y="45" width="241" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -62,7 +59,6 @@
             </objects>
             <point key="canvasLocation" x="1703" y="69"/>
         </scene>
-        <!--Table View Controller - Demos-->
         <scene sceneID="pjS-Q2-t1h">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc1-Ir-d3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,7 +167,6 @@
             </objects>
             <point key="canvasLocation" x="933" y="-216"/>
         </scene>
-        <!--Basic Demo View Controller - Basic-->
         <scene sceneID="XIY-Jw-vb1">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rc-hi-1l9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,14 +187,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mKi-ux-6KD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="
+
+* Animating the view to make the edited text field visible.
+" id="mKi-ux-6KD">
                                 <rect key="frame" x="27" y="155" width="266" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <string key="text">
-
-* Animating the view to make the edited text field visible.
-</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -248,7 +242,6 @@
             </objects>
             <point key="canvasLocation" x="1441" y="-574"/>
         </scene>
-        <!--Vali Demo View Controller - Validation-->
         <scene sceneID="qbr-3m-eLa">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbt-4W-S0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,7 +352,6 @@
             </objects>
             <point key="canvasLocation" x="1857" y="-509"/>
         </scene>
-        <!--Custom Menu View Controller - Try Custom -->
         <scene sceneID="5ab-Ua-hTN">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWj-Nm-xWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,12 +452,11 @@
             </objects>
             <point key="canvasLocation" x="933" y="390"/>
         </scene>
-        <!--Tab Bar Controller-->
         <scene sceneID="WKy-Vv-7Qf">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z88-Xr-hGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="6qD-K0-qJY" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="J6j-6J-HYR">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -479,7 +470,6 @@
             </objects>
             <point key="canvasLocation" x="-35" y="69"/>
         </scene>
-        <!--Navigation Controller - Demos-->
         <scene sceneID="EvX-Dm-dKN">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lh9-ZV-VQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>

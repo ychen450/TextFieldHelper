@@ -35,6 +35,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    /* Advanced setting for typical user signing up textfields: 
+     Keys including "textfield", to assign the UITextField object   
+                    "minlength", to assign the minimum length in int for validation, default value is 0 
+                    "minerror", to assign the error message for minimum length validation, default value is none
+                    "maxlength", to assign the maximum length in int for validation, default value is 100
+                    "maxerror", to assign the error message for maximum length validation, default value is none
+                    "validationlabel", to assign the UILabel object for showing the validation error message
+                    "validationoption", to assign the specialized validation option, including EMAIL(in xxx@xxx.xxx format), NUMBER(numbers only), and REPASSWORD(check if both passwords are the same)  
+     */
     NSMutableArray * textfieldArray = [[NSMutableArray alloc] init ];
     
     ValiDemo_username.delegate = self;
@@ -90,7 +99,6 @@
     
     
     [self.view setTextField:[NSArray arrayWithArray: textfieldArray]];
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(validateInputCallback:) 

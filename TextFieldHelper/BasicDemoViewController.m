@@ -33,6 +33,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    /* Basic setting for username and password textfield: 
+        link delegate and interface textfield objects
+     */
     NSMutableArray * textfieldArray = [[NSMutableArray alloc] init ];
     
     BasicDemo_username.delegate = self;

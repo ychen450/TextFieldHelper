@@ -14,7 +14,6 @@
 		969A3D8B156E79BD00951243 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A3D8A156E79BD00951243 /* main.m */; };
 		969A3D8F156E79BD00951243 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A3D8E156E79BD00951243 /* AppDelegate.m */; };
 		969A3D92156E79BD00951243 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A3D90156E79BD00951243 /* MainStoryboard_iPhone.storyboard */; };
-		969A3D95156E79BD00951243 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 969A3D93156E79BD00951243 /* MainStoryboard_iPad.storyboard */; };
 		969A3D98156E79BD00951243 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A3D97156E79BD00951243 /* ViewController.m */; };
 		969A3DA0156E79BD00951243 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969A3D9F156E79BD00951243 /* SenTestingKit.framework */; };
 		969A3DA1156E79BD00951243 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969A3D7E156E79BD00951243 /* UIKit.framework */; };
@@ -53,7 +52,6 @@
 		969A3D8D156E79BD00951243 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		969A3D8E156E79BD00951243 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		969A3D91156E79BD00951243 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		969A3D94156E79BD00951243 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		969A3D96156E79BD00951243 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		969A3D97156E79BD00951243 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		969A3D9E156E79BD00951243 /* TextFieldHelperTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldHelperTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,7 +137,6 @@
 				969A3D8D156E79BD00951243 /* AppDelegate.h */,
 				969A3D8E156E79BD00951243 /* AppDelegate.m */,
 				969A3D90156E79BD00951243 /* MainStoryboard_iPhone.storyboard */,
-				969A3D93156E79BD00951243 /* MainStoryboard_iPad.storyboard */,
 				969A3E161578098400951243 /* BasicDemoViewController.h */,
 				969A3E171578098400951243 /* BasicDemoViewController.m */,
 				969A3E19157812F000951243 /* ValiDemoViewController.h */,
@@ -257,7 +254,6 @@
 			files = (
 				969A3D89156E79BD00951243 /* InfoPlist.strings in Resources */,
 				969A3D92156E79BD00951243 /* MainStoryboard_iPhone.storyboard in Resources */,
-				969A3D95156E79BD00951243 /* MainStoryboard_iPad.storyboard in Resources */,
 				969A3E0F1577F7D100951243 /* clapboard@2x.png in Resources */,
 				969A3E111577F7ED00951243 /* lightbulb@2x.png in Resources */,
 			);
@@ -340,14 +336,6 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		969A3D93156E79BD00951243 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				969A3D94156E79BD00951243 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		969A3DA8156E79BD00951243 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -412,7 +400,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldHelper/TextFieldHelper-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldHelper/TextFieldHelper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -424,7 +412,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextFieldHelper/TextFieldHelper-Prefix.pch";
 				INFOPLIST_FILE = "TextFieldHelper/TextFieldHelper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
