@@ -49,6 +49,19 @@
     NSMutableDictionary *numberDict = [[NSMutableDictionary alloc] init];
     [numberDict setObject:CustMenu_num forKey:@"textfield"];
     [textfieldArray addObject:numberDict];
+    test1.delegate = self;
+    NSMutableDictionary *test1Dict = [[NSMutableDictionary alloc] init];
+    [test1Dict setObject:test1 forKey:@"textfield"];
+    [textfieldArray addObject:test1Dict];
+    test2.delegate = self;
+    NSMutableDictionary *test2Dict = [[NSMutableDictionary alloc] init];
+    [test2Dict setObject:test2 forKey:@"textfield"];
+    [textfieldArray addObject:test2Dict];
+    test3.delegate = self;
+    NSMutableDictionary *test3Dict = [[NSMutableDictionary alloc] init];
+    [test3Dict setObject:test3 forKey:@"textfield"];
+    [textfieldArray addObject:test3Dict];
+    
     
     [self.view setTextField:[NSArray arrayWithArray: textfieldArray]];
     
@@ -61,6 +74,7 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"did begin editing");
     [self.view textfieldMakeVisible:textField];
 }
 
