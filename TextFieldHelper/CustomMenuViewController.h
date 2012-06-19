@@ -10,11 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "UIView+Textfield.h"
 
-@interface CustomMenuViewController : UIViewController <UITextFieldDelegate>
+@interface CustomMenuViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *CustMenu_num;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *ValiSegment;
-@property (weak, nonatomic) IBOutlet UIScrollView *CustMenu_scroll;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollview;
+
+@property (strong, nonatomic) IBOutlet UILabel *testlabel;
+@property (strong, nonatomic) IBOutlet UITextField *test1;
+@property (strong, nonatomic) IBOutlet UITextField *test2;
+@property (strong, nonatomic) IBOutlet UITextField *test3;
 
 - (IBAction)SetDetailBtn:(id)sender;
 

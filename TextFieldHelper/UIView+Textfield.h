@@ -23,6 +23,8 @@
 //      [usernameDict setObject:[NSNumber numberWithInt:60] forKey:@"maxlength"];   (optional)
 //      [usernameDict setObject:USERNAME_ERROR_LONG forKey:@"maxerror"];            (optional)
 //      [usernameDict setObject:[NSArray arrayWithObject:validationResult] forKey:@"validationlabel"];  (optional)
+//      [usernameDict setObject:[NSString stringWithString:@"EMAIL"] forKey:@"validationoption"];       (optional)
+//      [usernameDict setObject:[NSNumber numberWithBool:NO] forKey:@"requirement"];                    (optional)
 //
 //      NSMutableDictionary *passwordDict = [[NSMutableDictionary alloc] init];
 //      [passwordDict setObject:_passwordField forKey:@"textfield"];

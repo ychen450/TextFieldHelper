@@ -42,7 +42,8 @@
                     "maxlength", to assign the maximum length in int for validation, default value is 100
                     "maxerror", to assign the error message for maximum length validation, default value is none
                     "validationlabel", to assign the UILabel object for showing the validation error message
-                    "validationoption", to assign the specialized validation option, including EMAIL(in xxx@xxx.xxx format), NUMBER(numbers only), and REPASSWORD(check if both passwords are the same)  
+                    "validationoption", to assign the specialized validation option, including EMAIL(in xxx@xxx.xxx format), NUMBER(numbers only), and REPASSWORD(check if both passwords are the same) 
+                    "requirement", to assign the text field to be required or optional, default value is required
      */
     NSMutableArray * textfieldArray = [[NSMutableArray alloc] init ];
     
@@ -74,6 +75,7 @@
     [zipDict setObject:GENERIC_ERROR_LONG forKey:@"maxerror"];
     [zipDict setObject:[NSString stringWithString:@"NUMBER"] forKey:@"validationoption"];
     [zipDict setObject:[NSArray arrayWithObject:ValiDemo_label] forKey:@"validationlabel"];
+    [zipDict setObject:[NSNumber numberWithBool:NO] forKey:@"requirement"];
     [textfieldArray addObject:zipDict];
     
     ValiDemo_password.delegate = self;

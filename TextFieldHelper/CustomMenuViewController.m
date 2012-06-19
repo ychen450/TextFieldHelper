@@ -16,7 +16,11 @@
 @implementation CustomMenuViewController
 @synthesize CustMenu_num;
 @synthesize ValiSegment;
-@synthesize CustMenu_scroll;
+@synthesize scrollview;
+@synthesize testlabel;
+@synthesize test1;
+@synthesize test2;
+@synthesize test3;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +36,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    CustMenu_scroll.contentSize = CGSizeMake(320, 700);
+    // scrollview setup
+    scrollview.contentSize = CGSizeMake(320, 700);
+    scrollview.delegate = self;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScrollView:)];
+    [scrollview addGestureRecognizer:singleTap];
+    
     
     NSMutableArray * textfieldArray = [[NSMutableArray alloc] init ];
     
@@ -63,11 +72,26 @@
     [self.view textfieldTouchToReturn];
 }
 
+- (void)tapScrollView:(UITapGestureRecognizer *)gesture {
+    [scrollview textfieldTouchToReturn];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGRect frame = self.testlabel.frame;
+    self.testlabel.frame = CGRectMake( frame.origin.x, 100+scrollview.contentOffset.y, frame.size.width, frame.size.height);
+}
+
+
 - (void)viewDidUnload
 {
     [self setCustMenu_num:nil];
     [self setValiSegment:nil];
-    [self setCustMenu_scroll:nil];
+    [self setTest1:nil];
+    [self setTest2:nil];
+    [self setTest3:nil];
+    [self setTestlabel:nil];
+    [self setScrollview:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -79,10 +103,10 @@
 
 - (IBAction)SetDetailBtn:(id)sender {
     
-    CGRect labelFrame = CGRectMake( 30, 250, 100, 30 );
-    UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
-    [label setText: @"NOT IMPLEMENTED YET"];
-    [label setTextColor: [UIColor orangeColor]];
-    [CustMenu_scroll addSubview:label];
+//    CGRect labelFrame = CGRectMake( 30, 250, 100, 30 );
+//    UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
+//    [label setText: @"NOT IMPLEMENTED YET"];
+//    [label setTextColor: [UIColor orangeColor]];
+//    [CustMenu_scroll addSubview:label];
 }
 @end

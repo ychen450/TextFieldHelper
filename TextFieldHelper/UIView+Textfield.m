@@ -16,8 +16,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
 CGFloat animatedDistance;
 NSArray* textFieldArray;
 NSArray* typeArray;
+NSMutableArray* requiredArray;
+NSMutableArray* dideditArray;
 UILabel* resultlabel;
-int endEditNum;
 
 @implementation UIView (Textfield)
 
@@ -25,7 +26,8 @@ int endEditNum;
 // assign the return key type, the last one is "Go, the others are "Next"
 - (void) setTextField:(NSArray*)tfarray {
     textFieldArray = [NSArray arrayWithArray:tfarray];
-    
+    requiredArray = [[NSMutableArray alloc] initWithCapacity:[tfarray count]];
+    dideditArray = [[NSMutableArray alloc] initWithCapacity:[tfarray count]];
     UITextField *tf;
     for (int i=0; i<[tfarray count]; i++) {
         tf = [[tfarray objectAtIndex:i] objectForKey:@"textfield"];
@@ -35,8 +37,14 @@ int endEditNum;
         } else {
             tf.returnKeyType = UIReturnKeyNext;
         }
+        if ([[tfarray objectAtIndex:i] objectForKey:@"requirement"]) {
+            NSNumber *req = [[tfarray objectAtIndex:i] objectForKey:@"requirement"];
+            [requiredArray addObject:req];
+        } else {
+            [requiredArray addObject:[NSNumber numberWithBool:YES]];
+        }
+        [dideditArray addObject:[NSNumber numberWithBool:NO]];
     } 
-    endEditNum = 0;
 }
 
 // implement animation to make sure the text field user editing is visible and clear 
@@ -84,7 +92,8 @@ int endEditNum;
     [self setFrame:viewFrame];    
     [UIView commitAnimations];
     
-    endEditNum = textField.tag+1;
+    [dideditArray replaceObjectAtIndex:textField.tag withObject:[NSNumber numberWithBool:YES]];
+    
     if ([[textFieldArray objectAtIndex:textField.tag] objectForKey:@"minlength"]||[[textFieldArray objectAtIndex:textField.tag] objectForKey:@"maxlength"]) {
         [self validateInput];
     }
@@ -121,8 +130,16 @@ int endEditNum;
 // if validation fails, show error message on label and give the text field a red border 
 - (BOOL) validateInput
 {
-    int fail = 0;
-    for (int i=0; i<endEditNum; i++) {
+    int fail=0, i=0, endEditNum=0;
+    for (int ii=0; ii<[textFieldArray count]; ii++) {
+        if ([[dideditArray objectAtIndex:ii] boolValue]) {
+            endEditNum = ii;
+        }
+    }
+    while (i<[textFieldArray count]) {
+        if (i==endEditNum+1) {
+            break;
+        }
         UITextField *tf;
         tf = [[textFieldArray objectAtIndex:i] objectForKey:@"textfield"];
         
@@ -142,8 +159,8 @@ int endEditNum;
             option = [[textFieldArray objectAtIndex:i] objectForKey:@"validationoption"];
             NSLog(@"option: %@",option);
         }
-    
-        if (endEditNum > tf.tag) {
+        if (([[dideditArray objectAtIndex:i] boolValue]&&[[requiredArray objectAtIndex:i] boolValue])||
+            ([[dideditArray objectAtIndex:i] boolValue]&&![[requiredArray objectAtIndex:i] boolValue])) {
             if ([tf.text length] < minLength) {
                 tf.layer.masksToBounds = YES;
                 tf.layer.borderColor = [[UIColor redColor] CGColor];
@@ -169,6 +186,7 @@ int endEditNum;
                 resultlabel.text = @"";
             }
         }
+        i++;
     }
     if (fail>0) {
         return FALSE;
